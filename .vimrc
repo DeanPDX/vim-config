@@ -1,12 +1,29 @@
-" Vim Pathogen "
-execute pathogen#infect()
+" Vim-Plug Configuration "
+" See following for details: https://github.com/junegunn/vim-plug "
+" Plugins will be downloaded under the specified directory. "
+call plug#begin('~/.vim/plugged')
 
-" Enable syntax highlighting "
-syntax on
+" Declare the list of plugins.
+Plug 'vim-airline/vim-airline'
+Plug 'dracula/vim', { 'as': 'dracula' }
+Plug 'leafgarland/typescript-vim'
+Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
+" Initialize plugin system "
+call plug#end()
 
-" Enable filetype plugins "
-filetype plugin on
-filetype indent on
+" NOTE: vim-plug automatically executes `filetype plugin indent on` and `syntax enable` "
+
+" Enable powerline fonts for airline "
+let g:airline_powerline_fonts = 1
+
+" Theme config  "
+color dracula
+set termguicolors
+let g:dracula_italic = 1
+highlight Normal ctermbg=None
+
+" Set tabs to 4 "
+set tabstop=4
 
 " Enable line numbers "
 set number
@@ -29,11 +46,8 @@ set smartcase	" If search string contains upper-case char, search becomes case-s
 set hlsearch	" Highlight search results
 set incsearch	" Begin searching as you type
 
-" Theme stuff "
-set background=dark
-let g:solarized_termcolors=256
-set t_Co=256
-colorscheme solarized
+" Highlight Cursor Line "
+set cursorline
 
 " Don't go to beginning of line when switching buffers "
 set nostartofline
@@ -46,3 +60,5 @@ set showmode
 
 " I happen to appreciate the tree view file list style "
 let g:netrw_liststyle = 3
+
+filetype plugin indent on
