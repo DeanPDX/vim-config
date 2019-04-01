@@ -18,4 +18,8 @@ Next, back up your existing `~/.vimrc` if you have one and copy my .vimrc to ~/.
 curl -o ~/.vimrc https://raw.githubusercontent.com/DeanPDX/vim-config/master/.vimrc
 ```
 
-Open vim, and run `:PlugInstall`.
+Open vim, and run `:PlugInstall`. On your first run you will get the following error because the plugins haven't been installed yet:
+
+```bash
+E185: Cannot find color scheme 'dracula'
+```
